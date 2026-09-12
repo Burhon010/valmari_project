@@ -1,41 +1,47 @@
 const items = [
   {
     title: "Удобный формат обучения",
-    text: "Мы стараемся для вас создавать обучение вне зависимости от расписания.",
+    text: "Мы стараемся для вас и делаем обучение еще комфортнее!\n\nУ нас вы можете обучаться в формате оффлайн или выбирать онлайн формат обучения. Наши мастер-классы дублируются в двух форматах",
     image: "/src/assets/images/about/format.jpg",
+    reverse: false,
   },
   {
     title: "Светлые аудитории",
-    text: "Мы стараемся для вас создавать современные и комфортные учебные пространства.",
+    text: "Мы стараемся для вас и делаем обучение еще комфортнее.\n\nУ нас вы можете обучаться в формате оффлайн или выбирать онлайн формат обучения. Наши мастер-классы дублируются в двух форматах",
     image: "/src/assets/images/about/classrooms.jpg",
+    reverse: true,
   },
   {
     title: "Обучение в маленьких группах",
-    text: "Мы не занимаемся в больших группах, чтобы уделить внимание каждому студенту.",
+    text: "Мы стараемся для вас и делаем обучение еще комфортнее!\n\nУ нас вы можете обучаться в формате оффлайн или выбирать онлайн формат обучения. Наши мастер-классы дублируются в двух форматах",
     image: "/src/assets/images/about/groups.jpg",
+    reverse: false,
   },
 ];
 
 export default function EducationSection() {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-14">
-      <h2 className="mb-10 text-center text-xl font-bold text-primary-dark md:text-2xl">
-        Мы — это обучение с комфортом
+    <section className="mx-auto max-w-7xl px-4 py-16 md:py-24">
+      <h2 className="mb-12 text-center text-2xl font-semibold text-primary md:mb-16 md:text-[35px]">
+        Мы - это обучение с комфортом
       </h2>
-      <div className="space-y-10">
-        {items.map((item, i) => (
+      <div className="space-y-14 md:space-y-20">
+        {items.map((item) => (
           <div
             key={item.title}
             className={`grid gap-6 md:grid-cols-2 md:items-center ${
-              i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""
+              item.reverse ? "md:[&>*:first-child]:order-2" : ""
             }`}
           >
-            <div className="aspect-video overflow-hidden rounded-xl bg-gray-200">
+            <div className="aspect-[488/396] overflow-hidden rounded-xl bg-badge">
               <img src={item.image} alt={item.title} className="h-full w-full object-cover" />
             </div>
             <div>
-              <h3 className="mb-2 font-semibold">{item.title}</h3>
-              <p className="text-sm text-gray-600">{item.text}</p>
+              <h3 className="mb-3 text-lg font-medium text-text/80">{item.title}</h3>
+              <div className="mb-4 h-[2px] w-[133px] bg-primary" />
+              <p className="whitespace-pre-line text-sm leading-relaxed text-text/80 md:text-[19px] md:leading-[25px]">
+                {item.text}
+              </p>
             </div>
           </div>
         ))}

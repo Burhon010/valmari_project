@@ -1,24 +1,24 @@
 const teachers = [
-  { name: "Марина Смирнова", role: "Ведущий преподаватель", image: "/src/assets/images/teachers/t1.jpg" },
-  { name: "Елена Петрова", role: "Преподаватель", image: "/src/assets/images/teachers/t2.jpg" },
-  { name: "Анна Кузнецова", role: "Преподаватель", image: "/src/assets/images/teachers/t3.jpg" },
-  { name: "Ольга Орлова", role: "Преподаватель", image: "/src/assets/images/teachers/t4.jpg" },
+  { name: "Марина Спивак", role: "Тренер", image: "/src/assets/images/teachers/marina.jpg" },
+  { name: "Елена Белогурова", role: "Тренер", image: "/src/assets/images/teachers/elena.jpg" },
+  { name: "Алина Ядчишина", role: "Тренер", image: "/src/assets/images/teachers/alina.jpg" },
+  { name: "Юлия Щукина", role: "Тренер", image: "/src/assets/images/teachers/yulia.jpg" },
 ];
 
 export default function TeachersSection() {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-14">
-      <h2 className="mb-8 text-center text-xl font-bold text-primary-dark md:text-2xl">
-        Наши тренеры
+    <section className="mx-auto max-w-7xl px-4 py-16 md:py-20">
+      <h2 className="mb-10 text-center text-2xl font-semibold text-text md:text-2xl">
+        Наши тренера
       </h2>
       <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
         {teachers.map((t) => (
-          <div key={t.name} className="text-center">
-            <div className="mx-auto mb-3 aspect-square w-28 overflow-hidden rounded-full bg-gray-200 md:w-32">
+          <div key={t.name}>
+            <div className="mb-3 aspect-[285/396] overflow-hidden rounded-xl bg-badge">
               <img src={t.image} alt={t.name} className="h-full w-full object-cover" />
             </div>
             <h3 className="text-sm font-semibold">{t.name}</h3>
-            <p className="text-xs text-gray-500">{t.role}</p>
+            <p className="text-xs text-text/80">{t.role}</p>
           </div>
         ))}
       </div>
