@@ -1,8 +1,13 @@
+import marinaImg from "../../assets/images/teachers/marina.jpg";
+import elenaImg from "../../assets/images/teachers/elena.jpg";
+import alinaImg from "../../assets/images/teachers/alina.jpg";
+import yuliaImg from "../../assets/images/teachers/yulia.jpg";
+
 const teachers = [
-  { name: "Марина Спивак", role: "Тренер", image: "/src/assets/images/teachers/marina.jpg" },
-  { name: "Елена Белогурова", role: "Тренер", image: "/src/assets/images/teachers/elena.jpg" },
-  { name: "Алина Ядчишина", role: "Тренер", image: "/src/assets/images/teachers/alina.jpg" },
-  { name: "Юлия Щукина", role: "Тренер", image: "/src/assets/images/teachers/yulia.jpg" },
+  { name: "Марина Спивак", role: "Тренер", image: marinaImg },
+  { name: "Елена Белогурова", role: "Тренер", image: elenaImg },
+  { name: "Алина Ядчишина", role: "Тренер", image: alinaImg },
+  { name: "Юлия Щукина", role: "Тренер", image: yuliaImg },
 ];
 
 export default function TeachersSection() {

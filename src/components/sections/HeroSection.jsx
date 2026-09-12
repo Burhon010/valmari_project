@@ -1,3 +1,5 @@
+import heroMain from "../../assets/images/hero/hero-main.jpg";
+
 export default function HeroSection() {
   return (
     <section className="mx-auto max-w-7xl px-4 pt-12 md:pt-16">
@@ -7,7 +9,7 @@ export default function HeroSection() {
         </h1>
         <div className="aspect-[589/452] overflow-hidden rounded-2xl bg-badge">
           <img
-            src="/src/assets/images/hero/hero-main.jpg"
+            src={heroMain}
             alt="Практическое занятие"
             className="h-full w-full object-cover"
           />

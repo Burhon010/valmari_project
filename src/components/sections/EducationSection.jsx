@@ -1,20 +1,24 @@
+import formatImg from "../../assets/images/about/format.jpg";
+import classroomsImg from "../../assets/images/about/classrooms.jpg";
+import groupsImg from "../../assets/images/about/groups.jpg";
+
 const items = [
   {
     title: "Удобный формат обучения",
     text: "Мы стараемся для вас и делаем обучение еще комфортнее!\n\nУ нас вы можете обучаться в формате оффлайн или выбирать онлайн формат обучения. Наши мастер-классы дублируются в двух форматах",
-    image: "/src/assets/images/about/format.jpg",
+    image: formatImg,
     reverse: false,
   },
   {
     title: "Светлые аудитории",
     text: "Мы стараемся для вас и делаем обучение еще комфортнее.\n\nУ нас вы можете обучаться в формате оффлайн или выбирать онлайн формат обучения. Наши мастер-классы дублируются в двух форматах",
-    image: "/src/assets/images/about/classrooms.jpg",
+    image: classroomsImg,
     reverse: true,
   },
   {
     title: "Обучение в маленьких группах",
     text: "Мы стараемся для вас и делаем обучение еще комфортнее!\n\nУ нас вы можете обучаться в формате оффлайн или выбирать онлайн формат обучения. Наши мастер-классы дублируются в двух форматах",
-    image: "/src/assets/images/about/groups.jpg",
+    image: groupsImg,
     reverse: false,
   },
 ];
