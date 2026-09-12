@@ -1,3 +1,5 @@
+import CountUp from "../ui/CountUp";
+
 const stats = [
   { value: "4000+", label: "Сертификатов мы выдали" },
   { value: "3500+", label: "Моделей в нашей базе" },
@@ -21,7 +23,9 @@ export function StatsSection() {
         <div className="grid grid-cols-2 gap-8 rounded md:grid-cols-4 md:bg-white md:p-14 md:shadow-[0px_2px_20px_0px_rgba(66,66,66,0.1)]">
           {stats.map((s) => (
             <div key={s.label} className="text-center">
-              <div className="text-2xl font-semibold text-primary md:text-[35px]">{s.value}</div>
+              <div className="text-2xl font-semibold text-primary md:text-[35px]">
+                <CountUp value={s.value} />
+              </div>
               <div className="mt-2 text-xs text-text md:text-sm">{s.label}</div>
             </div>
           ))}
