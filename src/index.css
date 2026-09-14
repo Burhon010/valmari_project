@@ -50,3 +50,34 @@ h1, h2, h3, h4, button {
     animation: none;
   }
 }
+
+@keyframes blood-jump {
+  0% {
+    transform: translate(-50%, -50%) translate(0, 0) scale(0.3);
+    opacity: 1;
+  }
+  30% {
+    transform: translate(-50%, -50%) translate(calc(var(--tx) * 0.6), calc(var(--ty) * 0.6 - 26px)) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(var(--tx), calc(var(--ty) + 34px)) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.blood-drop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 50% 50% 50% 0;
+  box-shadow: 0 0 4px 0 rgba(139, 0, 0, 0.4);
+  pointer-events: none;
+  animation: blood-jump ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blood-drop {
+    display: none;
+  }
+}
