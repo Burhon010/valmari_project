@@ -1,10 +1,10 @@
-import heroPhoto from "../../assets/images/home/hero-course.jpg";
+import heroWomen from "../../assets/images/home/hero-women.png";
 
 export default function HeroSection() {
   return (
-    <section className="bg-primary-light">
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 md:grid-cols-2 md:items-center md:py-16">
-        <div>
+    <section className="overflow-hidden bg-primary-light">
+      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 md:grid-cols-2 md:items-end md:py-0">
+        <div className="md:py-16">
           <span className="mb-4 inline-block text-sm font-semibold text-text/80 md:text-base">
             Бесплатный вебинар
           </span>
@@ -24,8 +24,12 @@ export default function HeroSection() {
             </button>
           </div>
         </div>
-        <div className="aspect-[589/452] overflow-hidden rounded-2xl bg-badge">
-          <img src={heroPhoto} alt="Практическое занятие" className="h-full w-full object-cover" />
+        <div className="flex justify-center md:justify-end">
+          <img
+            src={heroWomen}
+            alt="Косметологи VALMARI"
+            className="max-h-[320px] w-auto drop-shadow-xl md:max-h-[500px]"
+          />
         </div>
       </div>
     </section>
