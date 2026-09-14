@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { NAV_ITEMS } from "../../constants/navigation";
 import logoIcon from "../../assets/icons/ui/logo-icon.svg";
+import SocialIcons from "../ui/SocialIcons";
 
 const [menuLinks, infoLinks] = [NAV_ITEMS.slice(0, 4), NAV_ITEMS.slice(4)];
 
@@ -44,18 +45,7 @@ export default function Footer() {
         </div>
         <div>
           <h4 className="mb-3 font-semibold text-white">Мы в соцсетях</h4>
-          <div className="flex gap-3">
-            <a
-              href="#"
-              aria-label="Instagram"
-              className="h-8 w-8 rounded-full bg-gray-700 transition-colors hover:bg-primary"
-            />
-            <a
-              href="#"
-              aria-label="WhatsApp"
-              className="h-8 w-8 rounded-full bg-gray-700 transition-colors hover:bg-primary"
-            />
-          </div>
+          <SocialIcons />
         </div>
       </div>
       <div className="border-t border-gray-700 py-4 text-center text-xs text-gray-500">

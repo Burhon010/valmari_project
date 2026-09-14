@@ -1,4 +1,5 @@
 import logoIcon from "../../assets/icons/ui/logo-icon.svg";
+import SocialIcons from "../ui/SocialIcons";
 
 export default function MapSection() {
   return (
@@ -18,18 +19,7 @@ export default function MapSection() {
             <span className="font-bold text-white">+7 (999) 555-66-77</span>
           </a>
           <p className="text-sm">г. Красноярск, ул. Ленина, д. 1</p>
-          <div className="mt-4 flex gap-3">
-            <a
-              href="#"
-              aria-label="Instagram"
-              className="h-8 w-8 rounded-full bg-gray-700 transition-colors hover:bg-primary"
-            />
-            <a
-              href="#"
-              aria-label="WhatsApp"
-              className="h-8 w-8 rounded-full bg-gray-700 transition-colors hover:bg-primary"
-            />
-          </div>
+          <SocialIcons className="mt-4" />
         </div>
       </div>
     </section>
