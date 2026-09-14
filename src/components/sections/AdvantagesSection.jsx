@@ -45,7 +45,7 @@ export default function AdvantagesSection() {
         {reasons.map((r) => (
           <div
             key={r.number}
-            className={`rounded p-6 shadow-[0px_2px_20px_0px_rgba(66,66,66,0.1)] ${
+            className={`rounded p-6 shadow-[0px_2px_20px_0px_rgba(66,66,66,0.1)] transition-transform duration-300 hover:-translate-y-1 ${
               r.highlight ? "bg-badge" : "bg-white"
             }`}
           >

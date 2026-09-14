@@ -20,7 +20,11 @@ export default function TeachersSection() {
         {teachers.map((t) => (
           <div key={t.name}>
             <div className="mb-3 aspect-[285/396] overflow-hidden rounded-xl bg-badge">
-              <img src={t.image} alt={t.name} className="h-full w-full object-cover" />
+              <img
+                src={t.image}
+                alt={t.name}
+                className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+              />
             </div>
             <h3 className="text-sm font-semibold">{t.name}</h3>
             <p className="text-xs text-text/80">{t.role}</p>

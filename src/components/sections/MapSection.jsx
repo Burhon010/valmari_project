@@ -11,14 +11,22 @@ export default function MapSection() {
           />
         </div>
         <div className="bg-dark p-6 text-gray-300">
-          <div className="mb-3 flex items-center gap-2">
+          <a href="tel:+79995556677" className="mb-3 flex items-center gap-2 transition-colors hover:text-white">
             <span className="h-9 w-9 rounded-full bg-primary" />
             <span className="font-bold text-white">+7 (999) 555-66-77</span>
-          </div>
+          </a>
           <p className="text-sm">г. Красноярск, ул. Ленина, д. 1</p>
           <div className="mt-4 flex gap-3">
-            <span className="h-8 w-8 rounded-full bg-gray-700" />
-            <span className="h-8 w-8 rounded-full bg-gray-700" />
+            <a
+              href="#"
+              aria-label="Instagram"
+              className="h-8 w-8 rounded-full bg-gray-700 transition-colors hover:bg-primary"
+            />
+            <a
+              href="#"
+              aria-label="WhatsApp"
+              className="h-8 w-8 rounded-full bg-gray-700 transition-colors hover:bg-primary"
+            />
           </div>
         </div>
       </div>

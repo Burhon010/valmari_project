@@ -1,38 +1,59 @@
+import { Link } from "react-router-dom";
+import { NAV_ITEMS } from "../../constants/navigation";
+
+const [menuLinks, infoLinks] = [NAV_ITEMS.slice(0, 4), NAV_ITEMS.slice(4)];
+
 export default function Footer() {
   return (
     <footer className="bg-dark text-gray-300">
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 md:grid-cols-4">
         <div>
-          <div className="mb-3 flex items-center gap-2">
+          <Link to="/" className="mb-3 flex items-center gap-2">
             <span className="h-9 w-9 rounded-full bg-primary" />
             <span className="text-lg font-bold text-white">VALMARI</span>
-          </div>
-          <p className="text-sm">+7 (999) 555-66-77</p>
+          </Link>
+          <a href="tel:+79995556677" className="block text-sm transition-colors hover:text-white">
+            +7 (999) 555-66-77
+          </a>
           <p className="text-sm">г. Красноярск, ул. Ленина, д. 1</p>
         </div>
         <div>
           <h4 className="mb-3 font-semibold text-white">Меню</h4>
           <ul className="space-y-2 text-sm">
-            <li>Специальность</li>
-            <li>Обучение</li>
-            <li>Преподаватели</li>
-            <li>Курсы</li>
+            {menuLinks.map((item) => (
+              <li key={item.path}>
+                <Link to={item.path} className="transition-colors hover:text-white">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
         <div>
           <h4 className="mb-3 font-semibold text-white">Информация</h4>
           <ul className="space-y-2 text-sm">
-            <li>Отзывы</li>
-            <li>Оплата</li>
-            <li>Акции</li>
-            <li>Контакты</li>
+            {infoLinks.map((item) => (
+              <li key={item.path}>
+                <Link to={item.path} className="transition-colors hover:text-white">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
         <div>
           <h4 className="mb-3 font-semibold text-white">Мы в соцсетях</h4>
           <div className="flex gap-3">
-            <span className="h-8 w-8 rounded-full bg-gray-700" />
-            <span className="h-8 w-8 rounded-full bg-gray-700" />
+            <a
+              href="#"
+              aria-label="Instagram"
+              className="h-8 w-8 rounded-full bg-gray-700 transition-colors hover:bg-primary"
+            />
+            <a
+              href="#"
+              aria-label="WhatsApp"
+              className="h-8 w-8 rounded-full bg-gray-700 transition-colors hover:bg-primary"
+            />
           </div>
         </div>
       </div>
