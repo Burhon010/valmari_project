@@ -1,19 +1,28 @@
 import HeroSection from "../components/sections/HeroSection";
-import EducationSection from "../components/sections/EducationSection";
-import AdvantagesSection, { StatsSection } from "../components/sections/AdvantagesSection";
-import TeachersSection from "../components/sections/TeachersSection";
-import ReviewsSection from "../components/sections/ReviewsSection";
+import { StatsSection } from "../components/sections/AdvantagesSection";
+import CoursesSection from "../components/sections/CoursesSection";
+import AboutCenterSection from "../components/sections/AboutCenterSection";
+import CosmetologyGridSection from "../components/sections/CosmetologyGridSection";
+import ModelsSection from "../components/sections/ModelsSection";
+import MasterclassesSection from "../components/sections/MasterclassesSection";
+import AdvantagesSection from "../components/sections/AdvantagesSection";
+import SpecialOffersSection from "../components/sections/SpecialOffersSection";
+import CallbackFormSection from "../components/sections/CallbackFormSection";
 import MapSection from "../components/sections/MapSection";
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <EducationSection />
       <StatsSection />
+      <CoursesSection />
+      <AboutCenterSection />
+      <CosmetologyGridSection />
+      <ModelsSection />
+      <MasterclassesSection />
       <AdvantagesSection />
-      <TeachersSection />
-      <ReviewsSection />
+      <SpecialOffersSection />
+      <CallbackFormSection />
       <MapSection />
     </>
   );

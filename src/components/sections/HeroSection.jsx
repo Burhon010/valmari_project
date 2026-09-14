@@ -1,41 +1,32 @@
-import heroMain from "../../assets/images/hero/hero-main.jpg";
+import heroPhoto from "../../assets/images/home/hero-course.jpg";
 
 export default function HeroSection() {
   return (
-    <section className="mx-auto max-w-7xl px-4 pt-12 md:pt-16">
-      <div className="grid gap-8 md:grid-cols-2 md:items-center">
-        <h1 className="text-2xl font-semibold uppercase leading-tight text-primary md:text-[39px] md:leading-[57px]">
-          Учебный центр эстетической косметологии VAlmari
-        </h1>
-        <div className="aspect-[589/452] overflow-hidden rounded-2xl bg-badge">
-          <img
-            src={heroMain}
-            alt="Практическое занятие"
-            className="h-full w-full object-cover"
-          />
+    <section className="bg-primary-light">
+      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 md:grid-cols-2 md:items-center md:py-16">
+        <div>
+          <span className="mb-4 inline-block text-sm font-semibold text-text/80 md:text-base">
+            Бесплатный вебинар
+          </span>
+          <h1 className="text-3xl font-bold leading-tight text-primary md:text-[52px] md:leading-[1.05]">
+            ПРОФЕССИЯ КОСМЕТОЛОГ
+          </h1>
+          <p className="mt-5 max-w-md text-sm text-text/80 md:text-base">
+            Приглашаем на бесплатный вебинар для профессиональных косметологов
+            и интересующихся этой профессией
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <button className="rounded-full bg-primary px-8 py-4 text-sm font-semibold text-white transition-colors hover:bg-primary-hover">
+              Зарегистрироваться
+            </button>
+            <button className="rounded-full border-2 border-primary px-8 py-4 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white">
+              Узнать подробнее
+            </button>
+          </div>
         </div>
-      </div>
-
-      <div className="mt-10 rounded-lg bg-white p-6 shadow-[0px_2px_20px_0px_rgba(66,66,66,0.15)] md:mt-16 md:p-14">
-        <p className="text-sm leading-relaxed text-text/80 md:text-[25px] md:leading-[34px]">
-          <span className="font-semibold">Ведущий учебный центр эстетической косметологии</span>
-          <span className="font-medium">
-            . Более 5 лет мы проводим сертифицированные курсы профессионального
-            образования в области косметологии и индустрии красоты.
-          </span>
-          <br />
-          <br />
-          <span className="font-medium">В данный момент </span>
-          <span className="font-semibold">
-            в Харькове нет аналогов нашего учебного центра{" "}
-          </span>
-          <span className="font-medium">
-            по уровню подготовки и разнообразию читаемых курсов. Все выпускники
-            нашего учебного центра востребованы в: институтах омоложения и
-            здоровья, Спа-центрах, салонах красоты, частных клиниках и других
-            организация в сфере "красоты и здоровья".
-          </span>
-        </p>
+        <div className="aspect-[589/452] overflow-hidden rounded-2xl bg-badge">
+          <img src={heroPhoto} alt="Практическое занятие" className="h-full w-full object-cover" />
+        </div>
       </div>
     </section>
   );
