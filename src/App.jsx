@@ -3,6 +3,7 @@ import Layout from "./components/layout/Layout";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import CoursesPage from "./pages/CoursesPage";
+import CourseDetailPage from "./pages/CourseDetailPage";
 import PricePage from "./pages/PricePage";
 import SchedulePage from "./pages/SchedulePage";
 import PromotionsPage from "./pages/PromotionsPage";
@@ -32,6 +33,7 @@ export default function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<HomePage />} />
+          <Route path="/courses/botulinoterapiya" element={<CourseDetailPage />} />
           {NAV_ITEMS.map((item) => {
             const CustomPage = CUSTOM_PAGES[item.path];
             return (

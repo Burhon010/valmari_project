@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import CallbackModal from "../components/ui/CallbackModal";
 import mannequin1 from "../assets/images/home/course-mannequin-1.png";
 import mannequin2 from "../assets/images/home/course-mannequin-2.png";
@@ -71,16 +72,19 @@ const courses = [
     badgeColor: "#55A630",
     category: "Онлайн обучение",
     label: "Курс для медиков",
-    title: "Ботулинотерапия: базовый уровень",
+    title: "Ботулинотерапия для косметологов",
     titleColor: "text-primary",
     image: mannequin2,
-    date: "20 - 25 июня",
+    date: "Старт курса: 10 января",
     seats: "Свободно 5 из 15 мест",
     accent: "#55A630",
+    to: "/courses/botulinoterapiya",
   },
 ];
 
 function CourseCard({ course, onEnroll }) {
+  const navigate = useNavigate();
+
   return (
     <div className="flex h-full flex-col rounded-xl bg-white p-4 shadow-[0px_2px_20px_0px_rgba(66,66,66,0.12)]">
       <div className="mb-4 flex items-center justify-between">
@@ -106,6 +110,7 @@ function CourseCard({ course, onEnroll }) {
 
       <div className="mt-auto flex gap-2">
         <button
+          onClick={() => navigate(course.to ?? "/courses")}
           className="flex-1 rounded-full border-2 py-2 text-xs font-semibold transition-colors hover:text-white"
           style={{ borderColor: course.accent, color: course.accent }}
           onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = course.accent)}
