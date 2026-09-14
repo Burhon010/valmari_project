@@ -1,7 +1,10 @@
+import { useState } from "react";
 import heroWomen from "../../assets/images/home/hero-women.png";
 import moneyBill from "../../assets/images/home/money-bill.jpg";
 
 export default function HeroSection() {
+  const [grabbed, setGrabbed] = useState(false);
+
   return (
     <section className="overflow-hidden bg-primary-light">
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 md:grid-cols-2 md:items-end md:py-0">
@@ -26,21 +29,37 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="group flex justify-center md:justify-end">
-          <div className="relative aspect-[1000/817] max-h-[320px] w-auto md:max-h-[500px]">
+        <div
+          className="flex justify-center md:justify-end"
+          onMouseEnter={() => setGrabbed(true)}
+          onMouseLeave={() => setGrabbed(false)}
+          onClick={() => setGrabbed((v) => !v)}
+        >
+          <div className="relative aspect-[1000/817] max-h-[320px] w-auto cursor-pointer md:max-h-[500px]">
             <img
               src={heroWomen}
               alt="Косметологи VALMARI"
               className="h-full w-full object-contain drop-shadow-xl"
             />
 
-            {/* Деньги "выезжают" из кармана при наведении */}
+            {/* Рука достаёт купюру из кармана */}
             <img
               src={moneyBill}
               alt=""
               aria-hidden="true"
-              className="pointer-events-none absolute w-14 -translate-y-1 rotate-[-6deg] scale-50 rounded-sm shadow-md opacity-0 transition-all duration-500 ease-out group-hover:-translate-y-16 group-hover:rotate-[-16deg] group-hover:scale-100 group-hover:opacity-100 md:w-20"
-              style={{ left: "77%", bottom: "16%", transformOrigin: "bottom center" }}
+              className={`pointer-events-none absolute w-16 rounded-sm shadow-lg transition-all ease-out md:w-24 ${
+                grabbed
+                  ? "opacity-100 duration-500"
+                  : "opacity-0 duration-300"
+              }`}
+              style={{
+                left: "76%",
+                bottom: grabbed ? "38%" : "13%",
+                transform: grabbed
+                  ? "translate(-50%, 0) rotate(-18deg) scale(1)"
+                  : "translate(-50%, 0) rotate(2deg) scale(0.15)",
+                transformOrigin: "bottom center",
+              }}
             />
           </div>
         </div>
