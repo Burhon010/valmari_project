@@ -22,3 +22,31 @@ body {
 h1, h2, h3, h4, button {
   font-family: var(--font-heading);
 }
+
+@keyframes spin-head {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.mannequin-spin {
+  perspective: 600px;
+}
+
+.mannequin-spin img {
+  animation: spin-head 6s linear infinite;
+  transform-style: preserve-3d;
+}
+
+.mannequin-spin:hover img {
+  animation-duration: 2s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mannequin-spin img {
+    animation: none;
+  }
+}

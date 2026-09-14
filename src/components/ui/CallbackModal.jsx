@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function CallbackModal({ open, onClose }) {
+export default function CallbackModal({ open, onClose, title = "Закажите обратный звонок" }) {
   const [sent, setSent] = useState(false);
 
   if (!open) return null;
@@ -25,9 +25,7 @@ export default function CallbackModal({ open, onClose }) {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="mb-4 flex items-center justify-between">
-          <h3 className="text-lg font-semibold text-primary md:text-xl">
-            Закажите обратный звонок
-          </h3>
+          <h3 className="text-lg font-semibold text-primary md:text-xl">{title}</h3>
           <button
             onClick={handleClose}
             aria-label="Закрыть"

@@ -1,4 +1,7 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Carousel from "../ui/Carousel";
+import CallbackModal from "../ui/CallbackModal";
 import mannequin1 from "../../assets/images/home/course-mannequin-1.png";
 import mannequin2 from "../../assets/images/home/course-mannequin-2.png";
 
@@ -39,7 +42,9 @@ const courses = [
   },
 ];
 
-function CourseCard({ course }) {
+function CourseCard({ course, onEnroll }) {
+  const navigate = useNavigate();
+
   return (
     <div className="flex h-full w-[300px] flex-col rounded-xl bg-white p-4 shadow-[0px_2px_20px_0px_rgba(66,66,66,0.12)] sm:w-[340px]">
       <div className="mb-4 flex items-center justify-between">
@@ -54,7 +59,7 @@ function CourseCard({ course }) {
 
       <h3 className={`mb-3 text-lg font-semibold ${course.titleColor}`}>{course.title}</h3>
 
-      <div className="mb-4 flex flex-1 items-center justify-center">
+      <div className="mannequin-spin mb-4 flex flex-1 items-center justify-center">
         <img src={course.image} alt={course.title} className="h-32 w-auto object-contain" />
       </div>
 
@@ -69,12 +74,16 @@ function CourseCard({ course }) {
 
       <div className="mt-auto flex gap-2">
         <button
-          className="flex-1 rounded-full border-2 py-2 text-xs font-semibold transition-colors"
+          onClick={() => navigate("/courses")}
+          className="flex-1 rounded-full border-2 py-2 text-xs font-semibold transition-colors hover:text-white"
           style={{ borderColor: course.accent, color: course.accent }}
+          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = course.accent)}
+          onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
         >
           Подробнее
         </button>
         <button
+          onClick={() => onEnroll(course.title)}
           className="flex-1 rounded-full py-2 text-xs font-semibold text-white transition-opacity hover:opacity-90"
           style={{ backgroundColor: course.accent }}
         >
@@ -86,6 +95,8 @@ function CourseCard({ course }) {
 }
 
 export default function CoursesSection() {
+  const [enrollCourse, setEnrollCourse] = useState(null);
+
   return (
     <section className="mx-auto max-w-7xl px-4 py-16 md:py-20">
       <h2 className="mb-10 text-center text-2xl font-semibold text-text md:text-[32px]">
@@ -93,9 +104,15 @@ export default function CoursesSection() {
       </h2>
       <Carousel>
         {courses.map((course) => (
-          <CourseCard key={course.title} course={course} />
+          <CourseCard key={course.title} course={course} onEnroll={setEnrollCourse} />
         ))}
       </Carousel>
+
+      <CallbackModal
+        open={Boolean(enrollCourse)}
+        onClose={() => setEnrollCourse(null)}
+        title={enrollCourse ? `Запись на курс: ${enrollCourse}` : undefined}
+      />
     </section>
   );
 }
