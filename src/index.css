@@ -17,6 +17,13 @@ body {
   font-family: var(--font-body);
   color: var(--color-text);
   background-color: var(--color-page-bg);
+  cursor: url("./assets/icons/ui/cursor-syringe.svg") 5 17, auto;
+}
+
+a,
+button,
+[role="button"] {
+  cursor: url("./assets/icons/ui/cursor-syringe.svg") 5 17, pointer;
 }
 
 h1, h2, h3, h4, button {
