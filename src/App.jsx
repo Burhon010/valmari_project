@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import CoursesPage from "./pages/CoursesPage";
 import CourseDetailPage from "./pages/CourseDetailPage";
+import BlogPostPage from "./pages/BlogPostPage";
 import PricePage from "./pages/PricePage";
 import SchedulePage from "./pages/SchedulePage";
 import PromotionsPage from "./pages/PromotionsPage";
@@ -34,6 +35,7 @@ export default function App() {
         <Route element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="/courses/botulinoterapiya" element={<CourseDetailPage />} />
+          <Route path="/blog/mezoterapiya-shei" element={<BlogPostPage />} />
           {NAV_ITEMS.map((item) => {
             const CustomPage = CUSTOM_PAGES[item.path];
             return (

@@ -1,13 +1,15 @@
-import format from "../assets/images/about/format.jpg";
+import { Link } from "react-router-dom";
+import masterclass2 from "../assets/images/home/masterclass-2.jpg";
 import classrooms from "../assets/images/about/classrooms.jpg";
 import groups from "../assets/images/about/groups.jpg";
 
 const posts = [
   {
-    image: format,
-    title: "Как выбрать первый курс косметологии",
-    excerpt: "Разбираем, с чего начать новичку: базовые курсы, необходимые сертификаты и на что обратить внимание при выборе учебного центра.",
-    date: "02.09.2026",
+    image: masterclass2,
+    title: "Актуальна ли мезотерапия в коррекции шеи, декольте, кистей рук и какие существуют альтернативы?",
+    excerpt: "Разбираем, когда мезотерапия действительно работает, а когда стоит рассмотреть альтернативные методики.",
+    date: "20.11.2026",
+    to: "/blog/mezoterapiya-shei",
   },
   {
     image: classrooms,
@@ -43,9 +45,16 @@ export default function BlogPage() {
               <span className="text-xs text-text/50">{post.date}</span>
               <h2 className="mb-2 mt-1 text-base font-semibold text-text">{post.title}</h2>
               <p className="mb-4 text-sm text-text/70">{post.excerpt}</p>
-              <a href="#" className="text-sm font-semibold text-primary transition-colors hover:text-primary-hover">
-                Читать далее →
-              </a>
+              {post.to ? (
+                <Link
+                  to={post.to}
+                  className="text-sm font-semibold text-primary transition-colors hover:text-primary-hover"
+                >
+                  Читать далее →
+                </Link>
+              ) : (
+                <span className="text-sm font-semibold text-text/40">Скоро</span>
+              )}
             </div>
           </article>
         ))}
