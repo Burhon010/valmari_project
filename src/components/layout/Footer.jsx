@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { NAV_ITEMS } from "../../constants/navigation";
+import logoIcon from "../../assets/icons/ui/logo-icon.svg";
 
 const [menuLinks, infoLinks] = [NAV_ITEMS.slice(0, 4), NAV_ITEMS.slice(4)];
 
@@ -8,8 +9,8 @@ export default function Footer() {
     <footer className="bg-dark text-gray-300">
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 md:grid-cols-4">
         <div>
-          <Link to="/" className="mb-3 flex items-center gap-2">
-            <span className="h-9 w-9 rounded-full bg-primary" />
+          <Link to="/" className="mb-3 flex items-center gap-2 transition-opacity hover:opacity-80">
+            <img src={logoIcon} alt="" className="h-9 w-9" />
             <span className="text-lg font-bold text-white">VALMARI</span>
           </Link>
           <a href="tel:+79995556677" className="block text-sm transition-colors hover:text-white">

@@ -1,3 +1,5 @@
+import logoIcon from "../../assets/icons/ui/logo-icon.svg";
+
 export default function MapSection() {
   return (
     <section className="mx-auto max-w-7xl px-4 pb-14">
@@ -12,7 +14,7 @@ export default function MapSection() {
         </div>
         <div className="bg-dark p-6 text-gray-300">
           <a href="tel:+79995556677" className="mb-3 flex items-center gap-2 transition-colors hover:text-white">
-            <span className="h-9 w-9 rounded-full bg-primary" />
+            <img src={logoIcon} alt="" className="h-9 w-9" />
             <span className="font-bold text-white">+7 (999) 555-66-77</span>
           </a>
           <p className="text-sm">г. Красноярск, ул. Ленина, д. 1</p>

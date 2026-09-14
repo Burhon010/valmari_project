@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { NAV_ITEMS } from "../../constants/navigation";
 import CallbackModal from "../ui/CallbackModal";
+import logo from "../../assets/icons/ui/logo-full.svg";
 
 export default function Header() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -9,9 +10,8 @@ export default function Header() {
   return (
     <header className="w-full border-b border-gray-100">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
-        <Link to="/" className="flex items-center gap-2">
-          <span className="h-9 w-9 rounded-full bg-primary transition-transform group-hover:scale-105" />
-          <span className="text-lg font-bold">VALMARI</span>
+        <Link to="/" className="flex items-center transition-opacity hover:opacity-80">
+          <img src={logo} alt="VALMARI" className="h-8 w-auto md:h-9" />
         </Link>
         <a
           href="tel:+79995556677"
