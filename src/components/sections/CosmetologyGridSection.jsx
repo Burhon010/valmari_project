@@ -16,19 +16,19 @@ const tiles = [
   {
     title: "Онлайн обучение",
     image: tileOnline,
-    to: "/education",
+    to: "/videos",
     span: "md:col-span-3",
   },
   {
     title: "Мастер-классы",
     image: tileMasterclasses,
-    to: "/education",
+    to: "/webinars",
     span: "md:col-span-2",
   },
   {
     title: "Расписание",
     image: tileSchedule,
-    to: "/education",
+    to: "/schedule",
     span: "md:col-span-2",
   },
   {

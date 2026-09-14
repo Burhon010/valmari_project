@@ -1,13 +1,29 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import HomePage from "./pages/HomePage";
-import SpecialtyPage from "./pages/SpecialtyPage";
+import AboutPage from "./pages/AboutPage";
+import CoursesPage from "./pages/CoursesPage";
+import PricePage from "./pages/PricePage";
+import SchedulePage from "./pages/SchedulePage";
+import PromotionsPage from "./pages/PromotionsPage";
+import WebinarsPage from "./pages/WebinarsPage";
+import VideosPage from "./pages/VideosPage";
+import BlogPage from "./pages/BlogPage";
+import ShopPage from "./pages/ShopPage";
 import PlaceholderPage from "./pages/PlaceholderPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import { NAV_ITEMS } from "./constants/navigation";
 
 const CUSTOM_PAGES = {
-  "/specialty": SpecialtyPage,
+  "/about": AboutPage,
+  "/courses": CoursesPage,
+  "/price": PricePage,
+  "/schedule": SchedulePage,
+  "/promotions": PromotionsPage,
+  "/webinars": WebinarsPage,
+  "/videos": VideosPage,
+  "/blog": BlogPage,
+  "/shop": ShopPage,
 };
 
 export default function App() {
